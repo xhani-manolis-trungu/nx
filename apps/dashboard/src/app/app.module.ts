@@ -1,29 +1,34 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StoreModule } from '@ngrx/store';
-import { CoreDataModule, coreDataRoutes } from '@production-angular/core-data';
+import { BrowserModule } from '@angular/platform-browser';
+import { CoreDataModule } from '@production-angular/core-data';
 import {
-  CoreStateModule,
-  coreStateRoutes,
+  CoreStateModule
 } from '@production-angular/core-state';
-import { MaterialModule, materialRoutes } from '@production-angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from '@production-angular/material';
+import { NgModule } from '@angular/core';
 import { RoutingModule } from './routing.module';
+import { StoreModule } from '@ngrx/store';
+import { WidgetDetailsComponent } from './widgets/widget-details/widget-details.component';
+import { WidgetsComponent } from './widgets/widgets.component';
+import { WidgetsListComponent } from './widgets/widgets-list/widgets-list.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    WidgetsComponent,
+    WidgetsListComponent,
+    WidgetDetailsComponent
+  ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({}, {}),
+    BrowserModule,
     CoreDataModule,
     CoreStateModule,
+    HttpClientModule,
     MaterialModule,
-    RoutingModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
